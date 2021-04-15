@@ -1,0 +1,74 @@
+.container {
+    margin: 20px auto;
+    max-width: 60em;
+    font-family: Arial, sans-serif;
+}
+.add, .contacts {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid grey;
+}
+dl {
+    margin: 0;
+}
+dt {
+    float: left;
+    margin-right: 5px;
+    font-weight: bold;
+}
+.contacts {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+.contact {
+    margin: 10px;
+    padding: 10px 10px;
+    width: 400px;
+    border: 1px dashed lightgrey;
+}
+
+.contact ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.delete {
+    color: red;
+    text-decoration: none;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.addContactForm, h2 {
+    text-align: center;
+    margin: 10px;
+}
+
+.topRightCorner {
+    position: relative;
+}
+
+.topRightCorner a {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+
+.error {
+    color: red;
+    background-color: lightpink;
+}
+
+.success {
+    color: green;
+    background-color: lightgreen;
+}
+
+.panel {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
