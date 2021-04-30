@@ -25,7 +25,7 @@
 
             <div class="form-group">
                 <input type="submit" style="width: 100px;margin: 10px;" value="Login">
-{{--                <a href="{{ route('password.request') }}">Forgot?</a> &nbsp; | &nbsp;--}}
+                <a href="{{ route('password.request') }}">Forgot?</a> &nbsp; | &nbsp;
                 <a href="{{ route('register') }}">Register</a>
             </div>
         </form>

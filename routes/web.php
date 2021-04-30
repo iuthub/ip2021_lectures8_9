@@ -14,10 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ContactsController::class, 'index'])->name('index');
+Route::group([
+    "middleware"=>["auth"]
+], function(){
+    Route::get('/', [ContactsController::class, 'index'])->name('index');
+    Route::post('/add', [ContactsController::class, 'add'])->name('add');
+    Route::get('/delete/{id}', [ContactsController::class, 'delete'])->name('delete');
+    Route::post('/{id}/addNote', [ContactsController::class, 'addNote'])->name('addNote');
+    Route::get('/{id}/deleteNote/{noteId}', [ContactsController::class, 'deleteNote'])->name('deleteNote');
+});
 
-Route::post('/add', [ContactsController::class, 'add'])->name('add');
-Route::get('/delete/{id}', [ContactsController::class, 'delete'])->name('delete');
 
-Route::post('/{id}/addNote', [ContactsController::class, 'addNote'])->name('addNote');
-Route::get('/{id}/deleteNote/{noteId}', [ContactsController::class, 'deleteNote'])->name('deleteNote');
