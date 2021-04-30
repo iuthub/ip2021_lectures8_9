@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\ContactsRepository;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ContactsController extends Controller
 {
@@ -35,6 +37,14 @@ class ContactsController extends Controller
     }
 
     public function delete($id) {
+//        if(Gate::denies('delete-contact', Contact::find($id))) {
+//            return response()->redirectToRoute('index')->withErrors(['notAdmin'=> 'You are not an admin. You cannot delete contacts.']);
+//        }
+
+        if(Gate::inspect('delete', Contact::find($id))->denied()) {
+            return response()->redirectToRoute('index')->withErrors(['notAdmin'=> 'Cannot delete contacts.']);
+        }
+
         $this->repo->delete($id);
         return response()->redirectToRoute('index')->with('info', 'Removed!');
     }
