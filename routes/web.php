@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group([
-    "middleware"=>["auth"]
+    "middleware"=>["auth", "verified"]
 ], function(){
     Route::get('/', [ContactsController::class, 'index'])->name('index');
     Route::post('/add', [ContactsController::class, 'add'])->name('add');
