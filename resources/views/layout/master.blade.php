@@ -8,8 +8,7 @@
 </head>
 <body>
 <div class="container">
-    @include('partials.addContactForm')
-    @yield('contacts')
+    @yield('content')
 </div>
 </body>
 </html>

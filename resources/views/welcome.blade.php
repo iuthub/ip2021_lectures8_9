@@ -1,6 +1,7 @@
 @extends('layout.master')
 
-@section('contacts')
+@section('content')
+    @include('partials.addContactForm')
     <h2>Contacts</h2>
     <div class="contacts">
         @foreach($contacts as $contact)

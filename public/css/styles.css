@@ -72,3 +72,14 @@ dt {
     border: 1px solid grey;
     border-radius: 5px;
 }
+
+.form-group {
+    margin: 5px auto;
+    text-align: right;
+    width: 350px;
+}
+
+.inline_error {
+    color: red;
+    font-size: small;
+}
